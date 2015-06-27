@@ -7,6 +7,7 @@ var Page = function( bookshelf ) {
     
     // Initialize the Ptdo object name:
     this.parent.constructor.call(this,bookshelf,'page');
+    
 }
 
 // Class inheritance:
