@@ -14,10 +14,11 @@
   "devDependencies": {
     "mocha": "2.2.5",
     "blanket": "git://github.com/alex-seville/blanket.git",
-    "doxx": "1.4.0"
+    "doxx": "1.4.0",
+    "mocha-jshint": "2.2.3"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --reporter spec --require blanket test",
+    "test": "node_modules/.bin/mocha --reporter spec --require mocha-jshint test",
     "test-coverage": "node_modules/.bin/mocha --require blanket -R html-cov > coverage.html",
     "test-watch": "node_modules/.bin/mocha --watch --reporter spec test",
     "doc": "./node_modules/.bin/doxx -t Ptdo -s lib/"
@@ -28,7 +29,7 @@
   },
   "config": {
     "blanket": {
-      "pattern": [ "" ],
+      "pattern": [ "lib/" ],
       "data-cover-never": [ "node_modules", "tests" ]
     }
   }
