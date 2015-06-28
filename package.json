@@ -17,7 +17,7 @@
     "blanket": "git://github.com/alex-seville/blanket.git",
     "doxx": "1.4.0",
     "mocha-jshint": "2.2.3",
-    "jshint-html-reporter": "*.*.*"
+    "jshint-html-reporter": "0.2.4"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec --require mocha-jshint test",
