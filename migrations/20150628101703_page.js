@@ -11,15 +11,15 @@ exports.up = function(knex, Promise) {
         // Create the data table:
         knex.schema.createTable('page_data', function (table) {
             table.bigIncrements('id').primary().unsigned();
-            table.bigInteger('object_id').unsigned().index().references('id').inTable('object');
+            table.bigInteger('object_id').unsigned().index().references('id').inTable('page_object');
             table.string('value',64);
         }),
         
         // Create the history table:
         knex.schema.createTable('page_history', function (table) {
             table.bigIncrements('id').primary().unsigned();
-            table.bigInteger('object_id').unsigned().index().references('id').inTable('object');
-            table.bigInteger('data_id').unsigned().index().references('id').inTable('data');
+            table.bigInteger('object_id').unsigned().index().references('id').inTable('page_object');
+            table.bigInteger('data_id').unsigned().index().references('id').inTable('page_data');
             
             table.timestamp('created_at').defaultTo(knex.raw('now()'));
             table.timestamp('updated_at').defaultTo(knex.raw('now()'));
