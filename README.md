@@ -4,4 +4,6 @@
 
 [Code coverage](https://rawgit.com/billou-fr/ptdo/master/coverage.html)
 
+[Documentation](http://rawgit.com/billou-fr/ptdo/master/docs/)
+
 Just a lab project. Not really useful for now =) !

@@ -1,9 +1,15 @@
 "use strict";
 
+module.exports = require('./lib/Ptdo');
+
+return;
+
 var assert = require('assert');
 var Promise = require("bluebird");
 
-// Persisted Time-Dependent Object:
+/*
+ * Persisted Time-Dependent Object
+ */
 var Ptdo = function( bookshelf , ptdo ) {
     
     // Updating the Ptdo object name:
@@ -126,6 +132,9 @@ Ptdo.prototype.get = function ( id ) {
     });
 }
 
+/**
+ * Get object data on a specific date.
+ */
 Ptdo.prototype.getOn = function ( id , date ) {
     console.log( 116 , 'Ptdo::getOn(' + id + ')' , date );
     var _self = this;
