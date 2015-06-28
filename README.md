@@ -1,9 +1,9 @@
 # Persisted Time-Dependent Objects
 
-[![Build Status](https://travis-ci.org/billou-fr/ptdo.svg?branch=master)](https://travis-ci.org/billou-fr/ptdo)
+[![Build Status](https://travis-ci.org/GillesRasigade/ptdo.svg?branch=master)](https://travis-ci.org/billou-fr/ptdo)
 
-[Code coverage](https://rawgit.com/billou-fr/ptdo/master/docs/coverage.html)
+[Code coverage](https://rawgit.com/GillesRasigade/ptdo/master/docs/coverage.html)
 
-[Documentation](http://rawgit.com/billou-fr/ptdo/master/docs/)
+[Documentation](http://rawgit.com/GillesRasigade/ptdo/master/docs/)
 
 Just a lab project. Not really useful for now =) !
