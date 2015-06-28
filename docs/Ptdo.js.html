@@ -122,6 +122,7 @@
           </table>
           <div class="description"><p>Persisted Time-Dependent Object</p> </div>
           <pre><code class="language-javascript">var Ptdo = function( bookshelf , ptdo ) {
+    &quot;use strict&quot;;
     
     // Updating the Ptdo object name:
     if ( ptdo ) this.ptdo = ptdo;
@@ -149,7 +150,7 @@
         this.History = Ptdo.prototype.models[this.ptdo].History;
         this.Data = Ptdo.prototype.models[this.ptdo].Data;
     }
-}
+};
 
 // Class inheritance:
 // REF: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
@@ -206,7 +207,8 @@ Ptdo.prototype.Data    = null;</code></pre>
         History: _History,
         Data: _Data
     };
-}
+};
+
 Ptdo.prototype.initModelObject  = function() {
     var _self = this;
     
@@ -215,10 +217,11 @@ Ptdo.prototype.initModelObject  = function() {
         tableName: this.table_object,
         
         history: function() {
-            return this.hasMany(_self.History,'object_id')
-        },
+            return this.hasMany(_self.History,'object_id');
+        }
     });
-}
+};
+
 Ptdo.prototype.initModelHistory = function() {
     var _self = this;
     
@@ -227,10 +230,11 @@ Ptdo.prototype.initModelHistory = function() {
         tableName: this.table_history,
         
         data: function(){
-            return this.belongsTo(_self.Data,'data_id')
+            return this.belongsTo(_self.Data,'data_id');
         }
     });
-}
+};
+
 Ptdo.prototype.initModelData    = function() {
     var _self = this;
     
@@ -238,7 +242,7 @@ Ptdo.prototype.initModelData    = function() {
     return this.bookshelf.Model.extend({
         tableName: this.table_data
     });
-}</code></pre>
+};</code></pre>
           <section id="get">
             <h1>get</h1>
             <h5 class="subheader"></h5>
@@ -259,7 +263,7 @@ Ptdo.prototype.initModelData    = function() {
                 resolve(obj);
             });
     });
-}</code></pre>
+};</code></pre>
           <section id="getOn">
             <h1>getOn</h1>
             <h5 class="subheader"></h5>
@@ -277,16 +281,16 @@ Ptdo.prototype.initModelData    = function() {
                 q
                     .select('*').from('page_object')
                     .rightJoin('page_history', function () {
-                        this.on('page_object.id', '=', 'page_history.object_id')
+                        this.on('page_object.id', '=', 'page_history.object_id');
                     })
                     .rightJoin('page_data', function () {
                         this.on('page_object.id', '=', 'page_data.object_id')
-                        .andOn('page_data.id', '=', 'page_history.data_id')
+                        .andOn('page_data.id', '=', 'page_history.data_id');
                     })
                     .where( 'page_history.applicable_at', '&lt;=', date )
                     .orderBy( 'page_history.applicable_at' , 'desc' )
                     .select()
-                    .limit( 1 )
+                    .limit( 1 );
             })
             .fetch()
             .then(function(obj) {
@@ -294,8 +298,7 @@ Ptdo.prototype.initModelData    = function() {
                 resolve(obj);
             });
     });
-}
-
+};
 
 module.exports = Ptdo;</code></pre>
         </div>
