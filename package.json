@@ -1,5 +1,5 @@
 {
-  "name": "time-dependent-object",
+  "name": "Ptdo - Persisted Time-Dependent Object",
   "version": "0.1.0",
   "description": "Time-dependent object modelization",
   "private": true,
