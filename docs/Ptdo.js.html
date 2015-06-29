@@ -84,9 +84,33 @@
               </li>
               <li><a href="#initModels"><i class="alert alert-info"></i><span>initModels</span></a>
               </li>
+              <li><a href="#create"><i class="alert alert-info"></i><span>create</span></a>
+              </li>
               <li><a href="#get"><i class="alert alert-info"></i><span>get</span></a>
               </li>
-              <li><a href="#getOn"><i class="alert alert-info"></i><span>getOn</span></a>
+              <li><a href="#save"><i class="alert alert-info"></i><span>save</span></a>
+              </li>
+              <li><a href="#findSeveral"><i class="alert alert-info"></i><span>findSeveral</span></a>
+              </li>
+              <li><a href="#findOne"><i class="alert alert-info"></i><span>findOne</span></a>
+              </li>
+              <li><a href="#getDataOnRange"><i class="alert alert-info"></i><span>getDataOnRange</span></a>
+              </li>
+              <li><a href="#getDataOn"><i class="alert alert-info"></i><span>getDataOn</span></a>
+              </li>
+              <li><a href="#setDataOnRange"><i class="alert alert-info"></i><span>setDataOnRange</span></a>
+              </li>
+              <li><a href="#setDataOn"><i class="alert alert-info"></i><span>setDataOn</span></a>
+              </li>
+              <li><a href="#deleteDataOnRange"><i class="alert alert-info"></i><span>deleteDataOnRange</span></a>
+              </li>
+              <li><a href="#deleteDataOn"><i class="alert alert-info"></i><span>deleteDataOn</span></a>
+              </li>
+              <li><a href="#getHistory"><i class="alert alert-info"></i><span>getHistory</span></a>
+              </li>
+              <li><a href="#getPropertiesHistory"><i class="alert alert-info"></i><span>getPropertiesHistory</span></a>
+              </li>
+              <li><a href="#getPropertyHistory"><i class="alert alert-info"></i><span>getPropertyHistory</span></a>
               </li>
             </ul>
           </div>
@@ -243,6 +267,17 @@ Ptdo.prototype.initModelData    = function() {
         tableName: this.table_data
     });
 };</code></pre>
+          <section id="create">
+            <h1>create</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.create()</span>
+            </p>
+          </section>
+          <div class="description"><p>Create a new Ptdo object.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.create = function() {
+    
+}</code></pre>
           <section id="get">
             <h1>get</h1>
             <h5 class="subheader"></h5>
@@ -250,30 +285,146 @@ Ptdo.prototype.initModelData    = function() {
               <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.get()</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td>integer</td>
+                <td><p>Object id</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Get object by id</p> </div>
           <pre><code class="language-javascript">Ptdo.prototype.get = function ( id ) {
     console.log( 116 , 'Ptdo::get(' + id + ')' );
     var _self = this;
     return new Promise(function(resolve, reject) {
         _self.Object.forge({id:id})
-            .fetch({
-                withRelated: ['history.data']
-            })
+            // .fetch({
+            //     withRelated: ['history.data']
+            // })
+            .fetch()
             .then(function(obj) {
                 resolve(obj);
             });
     });
 };</code></pre>
-          <section id="getOn">
-            <h1>getOn</h1>
+          <section id="save">
+            <h1>save</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.getOn()</span>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.save()</span>
+            </p>
+          </section>
+          <div class="description"><p>Save object</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.save = function ( id ) {
+    
+}</code></pre>
+          <section id="findSeveral">
+            <h1>findSeveral</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.findSeveral()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>criterias</td>
+                <td>object</td>
+                <td><p>Search criterias</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Find objects</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.findSeveral = function ( criterias ) {
+    
+}</code></pre>
+          <section id="findOne">
+            <h1>findOne</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.findOne()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>criterias</td>
+                <td>object</td>
+                <td><p>Search criterias</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Find object</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.findOne = function ( criterias ) {
+    
+}</code></pre>
+          <div class="description"><hr>
+<h1>Get Ptdo Data methods</h1>
+ </div>
+          <section id="getDataOnRange">
+            <h1>getDataOnRange</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.getDataOnRange()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>from</td>
+                <td>date</td>
+                <td><p>From date</p></td>
+              </tr>
+              <tr>
+                <td>to</td>
+                <td>date</td>
+                <td><p>To date</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get object data on a range of date.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.getDataOnRange = function ( from , to ) {
+}</code></pre>
+          <section id="getDataOn">
+            <h1>getDataOn</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.getDataOn()</span>
             </p>
           </section>
           <div class="description"><p>Get object data on a specific date.</p> </div>
-          <pre><code class="language-javascript">Ptdo.prototype.getOn = function ( id , date ) {
-    console.log( 116 , 'Ptdo::getOn(' + id + ')' , date );
+          <pre><code class="language-javascript">Ptdo.prototype.getDataOn = function ( on ) {
+    console.log( 116 , 'Ptdo::getOn(' + id + ')' , on );
     var _self = this;
     return new Promise(function(resolve, reject) {
         _self.Object.forge({id:id})
@@ -287,7 +438,7 @@ Ptdo.prototype.initModelData    = function() {
                         this.on('page_object.id', '=', 'page_data.object_id')
                         .andOn('page_data.id', '=', 'page_history.data_id');
                     })
-                    .where( 'page_history.applicable_at', '&lt;=', date )
+                    .where( 'page_history.applicable_at', '&lt;=', on )
                     .orderBy( 'page_history.applicable_at' , 'desc' )
                     .select()
                     .limit( 1 );
@@ -298,7 +449,161 @@ Ptdo.prototype.initModelData    = function() {
                 resolve(obj);
             });
     });
-};
+};</code></pre>
+          <section id="setDataOnRange">
+            <h1>setDataOnRange</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.setDataOnRange()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>from</td>
+                <td>date</td>
+                <td><p>From date</p></td>
+              </tr>
+              <tr>
+                <td>to</td>
+                <td>date</td>
+                <td><p>To date</p></td>
+              </tr>
+              <tr>
+                <td>data</td>
+                <td>object</td>
+                <td><p>Ptdo object data to save</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get object data on a range of date.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.setDataOnRange = function ( from , to , data ) {
+}</code></pre>
+          <section id="setDataOn">
+            <h1>setDataOn</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.setDataOn()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>date</td>
+                <td>date</td>
+                <td><p>From date</p></td>
+              </tr>
+              <tr>
+                <td>data</td>
+                <td>object</td>
+                <td><p>Ptdo object data to save</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get object data on a specific date.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.setDataOn = function ( on , data ) {
+}</code></pre>
+          <section id="deleteDataOnRange">
+            <h1>deleteDataOnRange</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.deleteDataOnRange()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>from</td>
+                <td>date</td>
+                <td><p>From date</p></td>
+              </tr>
+              <tr>
+                <td>to</td>
+                <td>date</td>
+                <td><p>To date</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Delete object data on a range of date.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.deleteDataOnRange = function ( from , to ) {
+}</code></pre>
+          <section id="deleteDataOn">
+            <h1>deleteDataOn</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.deleteDataOn()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>on</td>
+                <td>date</td>
+                <td><p>On date</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Delete object data on a range of date.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.deleteDataOn = function ( on ) {
+}</code></pre>
+          <section id="getHistory">
+            <h1>getHistory</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.getHistory()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get history for the Ptdo object.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.getHistory = function () {
+}</code></pre>
+          <section id="getPropertiesHistory">
+            <h1>getPropertiesHistory</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.getPropertiesHistory()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get properties history for the Ptdo object.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.getPropertiesHistory = function ( properties ) {
+}</code></pre>
+          <section id="getPropertyHistory">
+            <h1>getPropertyHistory</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>Ptdo.prototype.getPropertyHistory()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get property history for the Ptdo object.</p> </div>
+          <pre><code class="language-javascript">Ptdo.prototype.getPropertyHistory = function ( property ) {
+}
 
 module.exports = Ptdo;</code></pre>
         </div>
